@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<template id="report_animal">
+    <t t-call="report.html_container">
+        <t t-call="report.external_layout">
+            <div class="page">
+                <h2>Report animals and clinics</h2>
+                <p>This report will contain all animals that was treated in our clinics.</p>
+				<table>
+					<head>
+					<tr>
+						<th>Crt. nr.</th>
+						<th>Name</th>
+						<th>Classification</th>
+						<th>Clinic</th>
+					</tr>
+					</head>
+					<body>
+					<t t-foreach="docs" t-as="o">
+						<tr>
+							<td>
+								<t t-set="i" t-value="0"/>
+								<t t-foreach="[1, 2, 3]" t-as="i">
+									<t t-esc="i+1"/>
+								</t>
+							</td>
+							<td><t t-field="o.name"/></td>
+							<td><t t-field="o.description"/></td>
+							<td>
+								<table>
+									<t t-foreach="o.clinic_ids" t-as="c">
+									<tr>
+									<td>
+										<t t-field="c.name"/>
+									</td>
+									</tr>
+									</t>
+								</table>
+							</td>
+						</tr>
+					</t>
+					</body>
+				</table>
+			</div>
+        </t>
+    </t>
+</template>
+</data>
+</openerp>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>	
+	<report
+    id="vetclinic_animal_report"
+    model="vetclinic.animal"
+    string="Animals"
+    report_type="qweb-html"
+    name="vetclinic.report_animal"
+    file="vetclinic.report_animal"
+    attachment_use="False"
+/>
+	</data>
+</openerp>
